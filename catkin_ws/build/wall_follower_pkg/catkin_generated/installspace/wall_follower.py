@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
-import rospy
 import math
-from sensor_msgs.msg import LaserScan
+import rospy
+import actionlib
 from geometry_msgs.msg import Twist
+from sensor_msgs.msg import LaserScan
+from wall_follower_pkg.msg import OdomRecordAction, OdomRecordGoal
 
 # Import the service message - alternate method for ROS environment
 import sys
@@ -201,6 +203,9 @@ class WallFollower:
             rospy.logwarn("Could not find wall, proceeding with wall following anyway")
         else:
             rospy.loginfo("Wall found, starting wall following")
+
+        # Start recording odometry
+        action_client = self.call_record_odom_action()
         
         rate = rospy.Rate(10)  # 10 Hz
         rospy.loginfo("Wall follower is running...")
@@ -213,6 +218,28 @@ class WallFollower:
                 rospy.loginfo("Waiting for laser data...")
             
             rate.sleep()
+
+    def call_record_odom_action(self):
+        """Call the record_odom action server to start recording odometry"""
+        rospy.loginfo("Calling record_odom action server...")
+
+        # Create an action client
+        client = actionlib.SimpleActionClient('record_odom', OdomRecordAction)
+
+        # Wait for the server to start up
+        rospy.loginfo("Waiting for record_odom action server...")
+        client.wait_for_server()
+
+        # Create and send a goal
+        goal = OdomRecordGoal()
+        client.send_goal(goal, feedback_cb=self.odom_feedback_callback)
+
+        rospy.loginfo("Goal sent to record_odom action server")
+        return client
+
+    def odom_feedback_callback(self, feedback):
+        """Process feedback from the record_odom action server"""
+        rospy.loginfo("Total distance traveled: %.2f meters", feedback.current_total)
 
 if __name__ == '__main__':
     try:

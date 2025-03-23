@@ -5,4 +5,4 @@ Description: Description of wall_follower_pkg
 Version: 0.0.0
 Cflags: -I/home/user/catkin_ws/devel/include
 Libs: -L${prefix}/lib 
-Requires: message_runtime rospy std_msgs
+Requires: rospy std_msgs geometry_msgs actionlib_msgs message_runtime

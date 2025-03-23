@@ -42,6 +42,22 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wall_follower_pkg/action" TYPE FILE FILES "/home/user/catkin_ws/src/wall_follower_pkg/action/OdomRecord.action")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wall_follower_pkg/msg" TYPE FILE FILES
+    "/home/user/catkin_ws/devel/share/wall_follower_pkg/msg/OdomRecordAction.msg"
+    "/home/user/catkin_ws/devel/share/wall_follower_pkg/msg/OdomRecordActionGoal.msg"
+    "/home/user/catkin_ws/devel/share/wall_follower_pkg/msg/OdomRecordActionResult.msg"
+    "/home/user/catkin_ws/devel/share/wall_follower_pkg/msg/OdomRecordActionFeedback.msg"
+    "/home/user/catkin_ws/devel/share/wall_follower_pkg/msg/OdomRecordGoal.msg"
+    "/home/user/catkin_ws/devel/share/wall_follower_pkg/msg/OdomRecordResult.msg"
+    "/home/user/catkin_ws/devel/share/wall_follower_pkg/msg/OdomRecordFeedback.msg"
+    )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/wall_follower_pkg/cmake" TYPE FILE FILES "/home/user/catkin_ws/build/wall_follower_pkg/catkin_generated/installspace/wall_follower_pkg-msg-paths.cmake")
 endif()
 

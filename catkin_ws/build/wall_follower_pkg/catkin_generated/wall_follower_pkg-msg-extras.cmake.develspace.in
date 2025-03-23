@@ -1,2 +1,2 @@
-set(wall_follower_pkg_MESSAGE_FILES "")
+set(wall_follower_pkg_MESSAGE_FILES "/home/user/catkin_ws/devel/share/wall_follower_pkg/msg/OdomRecordAction.msg;/home/user/catkin_ws/devel/share/wall_follower_pkg/msg/OdomRecordActionGoal.msg;/home/user/catkin_ws/devel/share/wall_follower_pkg/msg/OdomRecordActionResult.msg;/home/user/catkin_ws/devel/share/wall_follower_pkg/msg/OdomRecordActionFeedback.msg;/home/user/catkin_ws/devel/share/wall_follower_pkg/msg/OdomRecordGoal.msg;/home/user/catkin_ws/devel/share/wall_follower_pkg/msg/OdomRecordResult.msg;/home/user/catkin_ws/devel/share/wall_follower_pkg/msg/OdomRecordFeedback.msg")
 set(wall_follower_pkg_SERVICE_FILES "/home/user/catkin_ws/src/wall_follower_pkg/srv/FindWall.srv")

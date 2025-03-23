@@ -2,6 +2,9 @@
   <!-- Launch the find_wall service server -->
   <node pkg="wall_follower_pkg" type="find_wall_server.py" name="find_wall_server" output="screen" />
   
+  <!-- Launch the record_odom action server -->
+  <node pkg="wall_follower_pkg" type="record_odom_server.py" name="record_odom_server" output="screen" />
+  
   <!-- Launch the wall follower node -->
   <node pkg="wall_follower_pkg" type="wall_follower.py" name="wall_follower" output="screen" />
 </launch>
