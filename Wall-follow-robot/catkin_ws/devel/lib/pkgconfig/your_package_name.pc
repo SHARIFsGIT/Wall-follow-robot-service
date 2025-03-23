@@ -1,0 +1,8 @@
+prefix=/home/user/catkin_ws/devel
+
+Name: your_package_name
+Description: Description of your_package_name
+Version: 0.0.1
+Cflags: -I/home/user/catkin_ws/devel/include
+Libs: -L${prefix}/lib 
+Requires: rospy std_msgs geometry_msgs sensor_msgs message_runtime
